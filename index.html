@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BBI - Berita Baru Indonesia. Kabar terkini nasional, internasional, ekonomi, olahraga, teknologi, hiburan, dan gaya hidup.">
+    <meta name="theme-color" content="#c8102e">
+    <title>BBI - Berita Baru Indonesia</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23c8102e'/%3E%3Ctext x='50' y='66' font-size='46' font-family='Georgia' font-weight='bold' text-anchor='middle' fill='white'%3EBBI%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="preloader">
+        <div class="logo-box logo-besar">BBI</div>
+        <div class="loader"></div>
+        <h2>Memuat berita...</h2>
+        <p>Sedang mengambil kabar terbaru</p>
+    </div>
+
+    <!-- Bar atas: tanggal + ticker -->
+    <div class="utility">
+        <div class="container utility-inner">
+            <span id="tanggal" class="tanggal"></span>
+            <div class="ticker">
+                <span class="ticker-label">TERKINI</span>
+                <div class="ticker-jalur"><div class="ticker-isi" id="ticker"></div></div>
+            </div>
+            <button id="tema" class="tema-btn" aria-label="Ganti tema" title="Ganti tema">🌙</button>
+        </div>
+    </div>
+
+    <header class="topbar">
+        <div class="container masthead">
+            <a href="#" class="brand" aria-label="BBI - Berita Baru Indonesia" id="logo">
+                <span class="logo-box">BBI</span>
+                <span class="brand-teks">
+                    <strong>Berita Baru <span>Indonesia</span></strong>
+                    <small>Akurat. Cepat. Terpercaya.</small>
+                </span>
+            </a>
+            <label class="search">
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M21 21l-4.3-4.3M11 18a7 7 0 100-14 7 7 0 000 14z"/></svg>
+                <input id="cari" type="search" placeholder="Cari berita..." aria-label="Cari berita">
+            </label>
+        </div>
+        <nav class="nav-wrap" aria-label="Kategori berita">
+            <div class="container kategori" id="kategori">
+                <button class="aktif" data-kategori="terbaru">Terbaru</button>
+                <button data-kategori="nasional">Nasional</button>
+                <button data-kategori="internasional">Internasional</button>
+                <button data-kategori="ekonomi">Ekonomi</button>
+                <button data-kategori="olahraga">Olahraga</button>
+                <button data-kategori="teknologi">Teknologi</button>
+                <button data-kategori="hiburan">Hiburan</button>
+                <button data-kategori="gaya-hidup">Gaya Hidup</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <p id="status" class="status" hidden></p>
+
+        <!-- Headline utama -->
+        <section id="hero" class="hero" aria-label="Berita utama"></section>
+
+        <div class="layout">
+            <section class="kolom-utama">
+                <div class="judul-seksi">
+                    <h2 id="judulSeksi">Berita Terbaru</h2>
+                    <span id="jumlah" class="jumlah"></span>
+                </div>
+                <div id="berita"></div>
+                <div class="muat-wrap">
+                    <button id="muatLagi" class="btn-muat" hidden>Muat lebih banyak</button>
+                </div>
+            </section>
+
+            <aside class="sidebar" aria-label="Terpopuler">
+                <div class="widget">
+                    <div class="judul-seksi kecil"><h2>Terpopuler</h2></div>
+                    <ol id="populer" class="populer"></ol>
+                </div>
+                <div class="widget widget-tentang">
+                    <h3>Tentang BBI</h3>
+                    <p>BBI (Berita Baru Indonesia) menyajikan kabar terkini dari seluruh penjuru negeri dan dunia, dikurasi dari CNN Indonesia.</p>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div>
+                <div class="brand brand-footer">
+                    <span class="logo-box">BBI</span>
+                    <span class="brand-teks"><strong>Berita Baru <span>Indonesia</span></strong></span>
+                </div>
+                <p class="footer-desk">Portal berita yang menghadirkan informasi akurat, cepat, dan terpercaya untuk Indonesia.</p>
+            </div>
+            <div>
+                <h4>Kanal</h4>
+                <ul>
+                    <li>Nasional</li><li>Internasional</li><li>Ekonomi</li><li>Olahraga</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Lainnya</h4>
+                <ul>
+                    <li>Teknologi</li><li>Hiburan</li><li>Gaya Hidup</li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bawah">
+            <p>&copy; <span id="tahun"></span> BBI - Berita Baru Indonesia. Sumber berita: CNN Indonesia melalui berita-indo-api.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
